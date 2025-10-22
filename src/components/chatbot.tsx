@@ -3,6 +3,8 @@ import { Card } from "@heroui/card";
 import { Input } from "@heroui/input";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import { addToast } from "@heroui/toast";
+const API_URL = import.meta.env.VITE_API_URL ?? "";
 
 export const Chatbox = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,22 +12,49 @@ export const Chatbox = () => {
     [{ text: "Xin chào! Tôi có thể giúp gì cho bạn?", isUser: false }],
   );
   const [inputValue, setInputValue] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSend = () => {
-    if (inputValue.trim()) {
-      setMessages([...messages, { text: inputValue, isUser: true }]);
-      setInputValue("");
+  const handleSend = async () => {
+    if (!inputValue.trim()) return;
 
-      // Simulate response
-      setTimeout(() => {
+    const userMessage = inputValue;
+
+    setMessages([...messages, { text: userMessage, isUser: true }]);
+    setInputValue("");
+    setLoading(true);
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "chat",
+          message: userMessage,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setMessages((prev) => [...prev, { text: data.answer, isUser: false }]);
+      } else {
         setMessages((prev) => [
           ...prev,
-          {
-            text: "Cảm ơn bạn đã liên hệ! Đây là một chatbox demo. Trong phiên bản đầy đủ, tôi sẽ giúp bạn với các câu hỏi về kinh tế học.",
-            isUser: false,
-          },
+          { text: "Đã có lỗi xảy ra. Vui lòng thử lại.", isUser: false },
         ]);
-      }, 1000);
+      }
+    } catch {
+      addToast({
+        timeout: 2000,
+        title: "Có lỗi",
+        color: "danger",
+      });
+      setMessages((prev) => [
+        ...prev,
+        { text: "Không thể kết nối server.", isUser: false },
+      ]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -41,7 +70,7 @@ export const Chatbox = () => {
               variant="ghost"
               onClick={() => setIsOpen(false)}
             >
-              <Icon icon="lucide:twitter" />
+              Đóng
             </Button>
           </div>
 
@@ -62,6 +91,13 @@ export const Chatbox = () => {
                 </div>
               </div>
             ))}
+            {loading && (
+              <div className="flex justify-start">
+                <div className="max-w-[80%] rounded-lg px-4 py-2 bg-secondary text-secondary-foreground text-sm">
+                  Đang trả lời...
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="p-4 border-t border-border">
@@ -74,11 +110,12 @@ export const Chatbox = () => {
                 onKeyPress={(e) => e.key === "Enter" && handleSend()}
               />
               <Button
-                className="bg-primary hover:bg-primary-glow"
+                className="bg-primary hover:bg-primary-glow text-white"
+                disabled={loading}
                 size="md"
                 onClick={handleSend}
               >
-                <Icon className="text-white" icon="lucide:send-horizontal" />
+                Gửi
               </Button>
             </div>
           </div>
@@ -86,7 +123,7 @@ export const Chatbox = () => {
       )}
 
       <Button
-        className="fixed bottom-4 right-4 h-14 w-14 rounded-full shadow-lg bg-gradient-to-r from-primary to-primary-300 hover:opacity-90 hover:scale-110 transition-all duration-300 z-50 animate-pulse-glow"
+        className="fixed bottom-4 right-4 h-14 w-14 rounded-full shadow-lg bg-gradient-to-r from-primary to-primary-300 hover:opacity-90 hover:scale-110 transition-all duration-300 z-50"
         size="md"
         onClick={() => setIsOpen(!isOpen)}
       >
