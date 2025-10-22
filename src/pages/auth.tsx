@@ -5,23 +5,46 @@ import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
+
+import { useAuth } from "@/context/UserContext";
+
+// ⚙️ API endpoint Google Apps Script của bạn
 
 const Auth = () => {
+  const { user, login, signup, logout, setUser } = useAuth();
+  const [activeTab, setActiveTab] = useState("login");
+  const navigate = useNavigate();
+
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+
+  const [signupName, setSignupName] = useState("");
   const [signupEmail, setSignupEmail] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
-  const [signupName, setSignupName] = useState("");
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Login:", { loginEmail, loginPassword });
+    const ok = await login(loginEmail, loginPassword);
+
+    if (ok) navigate("/");
   };
 
-  const handleSignup = (e: React.FormEvent) => {
+  const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Signup:", { signupName, signupEmail, signupPassword });
+    const ok = await signup(signupName, signupEmail, signupPassword);
+
+    if (ok) setActiveTab("login");
   };
+
+  // ---- Handle Logout ----
+  const handleLogout = async () => {
+    const ok = await logout();
+
+    navigate("/");
+  };
+
+  // ---- Render ----
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4 py-12">
@@ -39,7 +62,12 @@ const Auth = () => {
         </CardHeader>
 
         <CardBody>
-          <Tabs fullWidth aria-label="Đăng nhập / Đăng ký">
+          <Tabs
+            fullWidth
+            aria-label="Đăng nhập / Đăng ký"
+            selectedKey={activeTab}
+            onSelectionChange={(key) => setActiveTab(key as string)}
+          >
             {/* --- Đăng nhập --- */}
             <Tab key="login" title="Đăng nhập">
               <form className="space-y-4 mt-4" onSubmit={handleLogin}>
@@ -52,7 +80,6 @@ const Auth = () => {
                   variant="bordered"
                   onChange={(e) => setLoginEmail(e.target.value)}
                 />
-
                 <Input
                   isRequired
                   label="Mật khẩu"
@@ -62,7 +89,6 @@ const Auth = () => {
                   variant="bordered"
                   onChange={(e) => setLoginPassword(e.target.value)}
                 />
-
                 <Button
                   className="w-full"
                   color="primary"
@@ -71,10 +97,14 @@ const Auth = () => {
                 >
                   Đăng nhập
                 </Button>
-
                 <p className="text-center text-sm text-muted-foreground">
                   Chưa có tài khoản?{" "}
-                  <Link color="primary" href="#" underline="hover">
+                  <Link
+                    color="primary"
+                    href="#"
+                    underline="hover"
+                    onPress={() => setActiveTab("signup")}
+                  >
                     Đăng ký ngay
                   </Link>
                 </p>
@@ -93,7 +123,6 @@ const Auth = () => {
                   variant="bordered"
                   onChange={(e) => setSignupName(e.target.value)}
                 />
-
                 <Input
                   isRequired
                   label="Email"
@@ -103,7 +132,6 @@ const Auth = () => {
                   variant="bordered"
                   onChange={(e) => setSignupEmail(e.target.value)}
                 />
-
                 <Input
                   isRequired
                   label="Mật khẩu"
@@ -113,7 +141,6 @@ const Auth = () => {
                   variant="bordered"
                   onChange={(e) => setSignupPassword(e.target.value)}
                 />
-
                 <Button
                   className="w-full"
                   color="secondary"
@@ -122,10 +149,14 @@ const Auth = () => {
                 >
                   Đăng ký
                 </Button>
-
                 <p className="text-center text-sm text-muted-foreground">
                   Đã có tài khoản?{" "}
-                  <Link color="primary" href="#" underline="hover">
+                  <Link
+                    color="primary"
+                    href="#"
+                    underline="hover"
+                    onPress={() => setActiveTab("login")}
+                  >
                     Đăng nhập
                   </Link>
                 </p>

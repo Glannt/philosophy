@@ -1,4 +1,5 @@
 import { Card } from "@heroui/card";
+import { Image } from "@heroui/image";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 
@@ -7,18 +8,18 @@ import DefaultLayout from "@/layouts/default";
 const Section1 = () => {
   return (
     <DefaultLayout>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background rounded-2xl shadow-md">
         <main className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-9xl mx-auto space-y-8">
             {/* Title */}
             <motion.div
               animate={{ opacity: 1, scale: 1 }}
               initial={{ opacity: 0, scale: 0.5 }}
               transition={{
-                duration: 0.8,
-                delay: 0.2,
-                ease: "anticipate",
-                easings: [0, 0.61, 0.2, 1.01],
+                duration: 0.6,
+                delay: 0.1,
+                ease: "circIn",
+                easings: [0, 0.41, 0.1, 0.5],
               }}
             >
               <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-400 bg-clip-text text-transparent animate-fade-in-up">
@@ -27,58 +28,76 @@ const Section1 = () => {
             </motion.div>
 
             {/* --- 1.1 --- */}
-            <motion.div
-              animate={{ opacity: 1, scale: 1 }}
-              initial={{ opacity: 0, scale: 0.5 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.6,
-                easings: [0, 0.81, 0.2, 1.01],
-              }}
-            >
-              <Card className="p-6 border-l-4 border-primary animate-fade-in-up [animation-delay:100ms] hover:shadow-lg transition-all duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center">
-                    <Icon
-                      className="w-5 h-5 text-primary-foreground"
-                      icon="lucide:lightbulb"
-                    />
-                  </div>
-                  <h2 className="text-2xl font-semibold text-primary">
-                    1.1. Khái niệm và tính tất yếu
-                  </h2>
-                </div>
-
-                <div className="space-y-4 text-foreground">
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Khái niệm:</h3>
-                    <p className="leading-relaxed">
-                      Kinh tế thị trường định hướng xã hội chủ nghĩa là một mô
-                      hình kinh tế đặc thù, nơi nền kinh tế vận hành theo các
-                      quy luật của thị trường nhưng đồng thời cũng hướng tới mục
-                      tiêu xác lập một xã hội{" "}
-                      <strong>
-                        &quot;dân giàu, nước mạnh, dân chủ, công bằng, văn
-                        minh&quot;
-                      </strong>
-                      . Mô hình này chịu sự điều tiết của Nhà nước và sự lãnh
-                      đạo của Đảng Cộng sản Việt Nam.
-                    </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <motion.div
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                initial={{ opacity: 0, scale: 0.8, x: -50 }}
+                transition={{
+                  delay: 0.3,
+                  duration: 0.6,
+                  ease: [0.25, 0.1, 0.25, 1.0],
+                }}
+              >
+                <Card className="p-6 border-l-4 border-primary hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center">
+                      <Icon
+                        className="w-5 h-5 text-primary-foreground"
+                        icon="lucide:lightbulb"
+                      />
+                    </div>
+                    <h2 className="text-2xl font-semibold text-primary">
+                      1.1. Khái niệm và tính tất yếu
+                    </h2>
                   </div>
 
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">
-                      Tính tất yếu:
-                    </h3>
-                    <p className="leading-relaxed">
-                      Việc phát triển mô hình kinh tế này được xem là một xu
-                      hướng khách quan, phù hợp với điều kiện và định hướng phát
-                      triển của Việt Nam.
-                    </p>
+                  <div className="space-y-4 text-foreground">
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">Khái niệm:</h3>
+                      <p className="leading-relaxed">
+                        Kinh tế thị trường định hướng xã hội chủ nghĩa là một mô
+                        hình kinh tế đặc thù, nơi nền kinh tế vận hành theo các
+                        quy luật của thị trường nhưng đồng thời cũng hướng tới
+                        mục tiêu xác lập một xã hội{" "}
+                        <strong>
+                          &quot;dân giàu, nước mạnh, dân chủ, công bằng, văn
+                          minh&quot;
+                        </strong>
+                        . Mô hình này chịu sự điều tiết của Nhà nước và sự lãnh
+                        đạo của Đảng Cộng sản Việt Nam.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">
+                        Tính tất yếu:
+                      </h3>
+                      <p className="leading-relaxed">
+                        Việc phát triển mô hình kinh tế này được xem là một xu
+                        hướng khách quan, phù hợp với điều kiện và định hướng
+                        phát triển của Việt Nam.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            </motion.div>
+                </Card>
+              </motion.div>
+              {/* RIGHT: Image */}
+              <motion.div
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                initial={{ opacity: 0, scale: 0.9, x: 50 }}
+                transition={{
+                  delay: 0.6,
+                  duration: 0.8,
+                  ease: [0.25, 0.1, 0.25, 1.0],
+                }}
+              >
+                <Image
+                  alt="Vietnam Economic Development"
+                  className="rounded-xl shadow-md object-cover w-full max-w-md md:max-w-lg"
+                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvietnamnow.kr%2Fwp-content%2Fuploads%2F2024%2F08%2FDALL%25C2%25B7E-2024-08-14-20.31.36-A-realistic-photograph-depicting-Vietnams-economic-development.-Show-modern-cityscapes-with-skyscrapers-bustling-markets-and-advanced-infrastructur.webp&f=1&nofb=1&ipt=16f9252338e32b9b8cbfbb46442a0db2e589a4bd00e42e214d688b892d42b6e6"
+                />
+              </motion.div>
+            </div>
 
             {/* --- 1.2 --- */}
             <motion.div
@@ -110,50 +129,67 @@ const Section1 = () => {
                 </p>
 
                 <div className="space-y-6">
-                  {/* Mục tiêu */}
-                  <div className="p-4 bg-secondary/50 rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Icon
-                        className="text-primary w-5 h-5"
-                        icon="lucide:target"
-                      />
-                      <h3 className="font-semibold text-lg text-primary">
-                        Về mục tiêu
-                      </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    {/* Mục tiêu */}
+                    <div className="p-4 bg-[#FFECC0] rounded-lg">
+                      <div className="flex items-center gap-12 mb-2">
+                        <Icon
+                          className="text-primary w-5 h-5"
+                          icon="lucide:target"
+                        />
+                        <h3 className="font-semibold text-lg text-primary">
+                          Về mục tiêu
+                        </h3>
+                      </div>
+                      <p className="leading-relaxed">
+                        Mục tiêu cao nhất là phát triển lực lượng sản xuất, xây
+                        dựng cơ sở vật chất - kỹ thuật cho chủ nghĩa xã hội,
+                        không ngừng nâng cao đời sống nhân dân và thực hiện mục
+                        tiêu{" "}
+                        <strong>
+                          &quot;dân giàu, nước mạnh, dân chủ, công bằng, văn
+                          minh&quot;
+                        </strong>
+                        .
+                      </p>
                     </div>
-                    <p className="leading-relaxed">
-                      Mục tiêu cao nhất là phát triển lực lượng sản xuất, xây
-                      dựng cơ sở vật chất - kỹ thuật cho chủ nghĩa xã hội, không
-                      ngừng nâng cao đời sống nhân dân và thực hiện mục tiêu{" "}
-                      <strong>
-                        &quot;dân giàu, nước mạnh, dân chủ, công bằng, văn
-                        minh&quot;
-                      </strong>
-                      .
-                    </p>
+                    <Image
+                      alt="hinh muc tieu"
+                      height={200}
+                      sizes="sm"
+                      src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmoit.gov.vn%2Fupload%2F2005517%2F20230915%2Fk2_a58e9.jpg&f=1&nofb=1&ipt=65cea99d44c40eb290a7c261aac50aea94c6dcd57aba034a68ffb1411eb63b59"
+                      width={300}
+                    />
                   </div>
-
                   {/* Sở hữu */}
-                  <div className="p-4 bg-secondary/50 rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Icon
-                        className="text-primary w-5 h-5"
-                        icon="lucide:buildings"
-                      />
-                      <h3 className="font-semibold text-lg text-primary">
-                        Về quan hệ sở hữu và thành phần kinh tế
-                      </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <Image
+                      alt="hinh muc tieu"
+                      height={200}
+                      src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmoit.gov.vn%2Fupload%2F2005517%2F20230915%2Fk2_a58e9.jpg&f=1&nofb=1&ipt=65cea99d44c40eb290a7c261aac50aea94c6dcd57aba034a68ffb1411eb63b59"
+                      width={300}
+                    />
+                    <div className="p-4 bg-[#FFECC0] rounded-lg">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Icon
+                          className="text-primary w-5 h-5"
+                          icon="lucide:buildings"
+                        />
+                        <h3 className="font-semibold text-lg text-primary">
+                          Về quan hệ sở hữu và thành phần kinh tế
+                        </h3>
+                      </div>
+                      <p className="leading-relaxed">
+                        Nền kinh tế thừa nhận sự tồn tại của nhiều hình thức sở
+                        hữu và nhiều thành phần kinh tế. Trong đó, kinh tế nhà
+                        nước giữ vai trò chủ đạo, và kinh tế tư nhân được coi là
+                        một động lực quan trọng của sự phát triển.
+                      </p>
                     </div>
-                    <p className="leading-relaxed">
-                      Nền kinh tế thừa nhận sự tồn tại của nhiều hình thức sở
-                      hữu và nhiều thành phần kinh tế. Trong đó, kinh tế nhà
-                      nước giữ vai trò chủ đạo, và kinh tế tư nhân được coi là
-                      một động lực quan trọng của sự phát triển.
-                    </p>
                   </div>
 
                   {/* Quản lý */}
-                  <div className="p-4 bg-secondary/50 rounded-lg">
+                  <div className="p-4 bg-[#FFECC0] rounded-lg ">
                     <div className="flex items-center gap-2 mb-2">
                       <Icon
                         className="text-primary w-5 h-5"
@@ -172,7 +208,7 @@ const Section1 = () => {
                   </div>
 
                   {/* Phân phối */}
-                  <div className="p-4 bg-secondary/50 rounded-lg">
+                  <div className="p-4 bg-[#FFECC0] rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
                       <Icon
                         className="text-primary w-5 h-5"
@@ -190,7 +226,7 @@ const Section1 = () => {
                   </div>
 
                   {/* Kinh tế - xã hội */}
-                  <div className="p-4 bg-secondary/50 rounded-lg">
+                  <div className="p-4 bg-[#FFECC0] rounded-lg">
                     <div className="flex items-center gap-2 mb-2">
                       <Icon
                         className="text-primary w-5 h-5"

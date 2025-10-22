@@ -1,4 +1,3 @@
-import { Button } from "@heroui/button";
 import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
@@ -19,8 +18,12 @@ import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, SearchIcon } from "@/components/icons";
 import { Logo } from "@/components/icons";
+import { useAuth } from "@/context/UserContext";
+import { NavbarAuth } from "@/components/navbar-auth";
+import { DropdownBackground } from "@/components/dropdown-background";
 
 export const Navbar = () => {
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
   const searchInput = (
     <Input
@@ -62,7 +65,10 @@ export const Navbar = () => {
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-center ml-2">
           {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
+            <NavbarItem
+              key={item.href}
+              className="flex items-center justify-center"
+            >
               <Link
                 className={clsx(
                   linkStyles({ color: "foreground" }),
@@ -75,6 +81,7 @@ export const Navbar = () => {
               </Link>
             </NavbarItem>
           ))}
+          <DropdownBackground />
         </div>
       </NavbarContent>
 
@@ -83,42 +90,9 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          {/* <Link isExternal href={siteConfig.links.twitter} title="Twitter">
-            <TwitterIcon className="text-default-500" />
-          </Link>
-          <Link isExternal href={siteConfig.links.discord} title="Discord">
-            <DiscordIcon className="text-default-500" />
-          </Link>
-          <Link isExternal href={siteConfig.links.github} title="GitHub">
-            <GithubIcon className="text-default-500" />
-          </Link> */}
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            variant="light"
-            className="text-sm font-normal hover:scale-105 transition-all duration-300"
-            // href={siteConfig.links.login}
-            onPress={handleAuth}
-          >
-            Đăng nhập
-          </Button>
-        </NavbarItem>
-        <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 hover:scale-105 transition-all duration-300"
-            // href={siteConfig.links.register}
-            variant="flat"
-            onPress={handleAuth}
-          >
-            Đăng ký
-          </Button>
-        </NavbarItem>
+        <NavbarAuth handleAuth={handleAuth} handleLogout={logout} user={user} />
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
@@ -132,7 +106,7 @@ export const Navbar = () => {
       <NavbarMenu>
         {searchInput}
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
+          {siteConfig.navItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
                 color={
@@ -149,6 +123,7 @@ export const Navbar = () => {
               </Link>
             </NavbarMenuItem>
           ))}
+          <DropdownBackground />
         </div>
       </NavbarMenu>
     </HeroUINavbar>

@@ -20,10 +20,6 @@ export const siteConfig = {
       label: "Quiz",
       href: "/quiz",
     },
-    {
-      label: "About",
-      href: "/about",
-    },
   ],
   navMenuItems: [
     {
