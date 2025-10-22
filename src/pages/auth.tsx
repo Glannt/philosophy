@@ -12,7 +12,7 @@ import { useAuth } from "@/context/UserContext";
 // ⚙️ API endpoint Google Apps Script của bạn
 
 const Auth = () => {
-  const { login, signup, logout } = useAuth();
+  const { login, signup } = useAuth();
   const [activeTab, setActiveTab] = useState("login");
   const navigate = useNavigate();
 
