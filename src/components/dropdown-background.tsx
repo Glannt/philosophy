@@ -17,10 +17,10 @@ import { useEffect, useState } from "react";
 // ];
 
 const backgroundOptions = [
-  { label: "Mountains", value: "/assets/mountain.jpg" },
-  { label: "Beach", value: "/images/beach.jpg" },
-  { label: "City", value: "/images/city.jpg" },
-  { label: "Space", value: "/images/space.jpg" },
+  { label: "Adam Smith", value: "/assets/adam.jpg" },
+  { label: "Athens", value: "/assets/anh2.jpg" },
+  // { label: "City", value: "/images/city.jpg" },
+  // { label: "Space", value: "/images/space.jpg" },
 ];
 
 export const DropdownBackground = () => {
@@ -61,7 +61,7 @@ export const DropdownBackground = () => {
           {backgroundOptions.map((option) => (
             <DropdownItem
               key={option.label}
-              description={`Change background to ${option.label}`}
+              description={`Đổi background ${option.label}`}
               onClick={() => setBgImage(option.value)}
             >
               {option.label}

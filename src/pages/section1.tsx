@@ -8,7 +8,7 @@ import DefaultLayout from "@/layouts/default";
 const Section1 = () => {
   return (
     <DefaultLayout>
-      <div className="min-h-screen bg-background rounded-2xl shadow-md">
+      <div className="min-h-screen rounded-2xl shadow-md">
         <main className="container mx-auto px-4 py-12">
           <div className="max-w-9xl mx-auto space-y-8">
             {/* Title */}
@@ -28,7 +28,7 @@ const Section1 = () => {
             </motion.div>
 
             {/* --- 1.1 --- */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mx-auto">
               <motion.div
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 initial={{ opacity: 0, scale: 0.8, x: -50 }}
@@ -93,7 +93,7 @@ const Section1 = () => {
               >
                 <Image
                   alt="Vietnam Economic Development"
-                  className="rounded-xl shadow-md object-cover w-full max-w-md md:max-w-lg"
+                  className="rounded-xl shadow-md object-cover w-full max-w-md md:max-w-lg mx-auto"
                   src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvietnamnow.kr%2Fwp-content%2Fuploads%2F2024%2F08%2FDALL%25C2%25B7E-2024-08-14-20.31.36-A-realistic-photograph-depicting-Vietnams-economic-development.-Show-modern-cityscapes-with-skyscrapers-bustling-markets-and-advanced-infrastructur.webp&f=1&nofb=1&ipt=16f9252338e32b9b8cbfbb46442a0db2e589a4bd00e42e214d688b892d42b6e6"
                 />
               </motion.div>
@@ -157,7 +157,7 @@ const Section1 = () => {
                       alt="hinh muc tieu"
                       height={200}
                       sizes="sm"
-                      src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmoit.gov.vn%2Fupload%2F2005517%2F20230915%2Fk2_a58e9.jpg&f=1&nofb=1&ipt=65cea99d44c40eb290a7c261aac50aea94c6dcd57aba034a68ffb1411eb63b59"
+                      src="/assets/anh4.jpg"
                       width={300}
                     />
                   </div>
@@ -166,7 +166,7 @@ const Section1 = () => {
                     <Image
                       alt="hinh muc tieu"
                       height={200}
-                      src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmoit.gov.vn%2Fupload%2F2005517%2F20230915%2Fk2_a58e9.jpg&f=1&nofb=1&ipt=65cea99d44c40eb290a7c261aac50aea94c6dcd57aba034a68ffb1411eb63b59"
+                      src="/assets/plato-1.jpg"
                       width={300}
                     />
                     <div className="p-4 bg-[#FFECC0] rounded-lg">

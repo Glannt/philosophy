@@ -2,10 +2,13 @@ import { Card } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
 
 import DefaultLayout from "@/layouts/default";
 
 export default function IndexPage() {
+  const navigate = useNavigate();
+
   return (
     <DefaultLayout>
       <div className="min-h-screen">
@@ -30,7 +33,7 @@ export default function IndexPage() {
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up [animation-delay:200ms] [animation-fill-mode:forwards]">
+                <p className="text-xl text-orange-400 mb-8 font-extrabold max-w-2xl mx-auto animate-fade-in-up [animation-delay:200ms] [animation-fill-mode:forwards]">
                   Tìm hiểu về nền kinh tế Việt Nam và các quan hệ lợi ích kinh
                   tế trong bối cảnh hội nhập quốc tế
                 </p>
@@ -42,12 +45,13 @@ export default function IndexPage() {
                       className="bg-gradient-to-r from-primary to-primary-200 hover:opacity-90 hover:scale-105 transition-all duration-300"
                       color="primary"
                       size="lg"
+                      onPress={() => navigate("/section1")}
                     >
                       Bắt đầu học
                     </Button>
                   </Link>
 
-                  <Link as="button" href="/quiz">
+                  {/* <Link as="button" href="/quiz">
                     <Button
                       className="hover:scale-105 transition-all duration-300"
                       size="lg"
@@ -55,7 +59,7 @@ export default function IndexPage() {
                     >
                       Kiểm tra kiến thức
                     </Button>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
@@ -187,7 +191,7 @@ export default function IndexPage() {
           {/* CTA Section */}
           <section className="py-16">
             <div className="container mx-auto px-4">
-              <Card className="p-8 md:p-12 bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/40 animate-fade-in">
+              <Card className="p-8 md:p-12 border-2 border-primary/40 animate-fade-in shadow-2xl shadow-blue-900">
                 <div className="max-w-3xl mx-auto text-center">
                   <h2 className="text-3xl font-bold mb-4 text-foreground animate-fade-in-up">
                     Sẵn sàng kiểm tra kiến thức của bạn?

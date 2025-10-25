@@ -22,7 +22,7 @@ const subCardVariants = {
 const Section3 = () => {
   return (
     <DefaultLayout>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen">
         <main className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto space-y-8">
             {/* --- Tiêu đề chương --- */}
@@ -218,7 +218,7 @@ const Section3 = () => {
               whileHover="hover"
               whileInView="visible"
             >
-              <Card className="p-6 border-l-4 border-primary bg-gradient-to-br from-card to-secondary/20 h-full">
+              <Card className="p-6 border-l-4 border-primary h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <motion.div
                     animate={{ y: 0, opacity: 1 }}
