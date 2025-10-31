@@ -18,11 +18,20 @@ export default function DefaultLayout({
         <Link
           isExternal
           className="flex items-center gap-1 text-current"
-          href="https://heroui.com"
           title="heroui.com homepage"
         >
           <span className="text-default-600">Powered by</span>
           <p className="text-primary">Group 5</p>
+        </Link>
+        <span className="mx-4 text-default-400">|</span>
+        <Link
+          isExternal
+          className="flex items-center gap-1 text-current"
+          href="https://www.facebook.com/ngo.khanh.duy.119629/"
+          title="heroui.com homepage"
+        >
+          <span className="text-default-600">Mentor</span>
+          <p className="text-primary">PhD. S. Ngô Khánh Duy</p>
         </Link>
       </footer>
       <Chatbox />

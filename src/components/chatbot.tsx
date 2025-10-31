@@ -61,7 +61,7 @@ export const Chatbox = () => {
   return (
     <>
       {isOpen && (
-        <Card className="fixed bottom-20 right-4 w-80 md:w-96 h-96 flex flex-col shadow-2xl border-primary/20 z-50 animate-slide-in-left">
+        <Card className="fixed bottom-20 right-4 w-md md:w-md h-2/4 flex flex-col shadow-2xl border-primary/20 z-50 animate-slide-in-left">
           <div className="flex items-center justify-between p-4 border-b border-border bg-gradient-to-r from-primary to-primary-300 text-primary-foreground rounded-t-lg">
             <h3 className="font-semibold">Trợ lý học tập</h3>
             <Button
