@@ -82,6 +82,7 @@ const Section1 = () => {
                 </Card>
               </motion.div>
               {/* RIGHT: Image */}
+
               <motion.div
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 initial={{ opacity: 0, scale: 0.9, x: 50 }}
@@ -91,11 +92,15 @@ const Section1 = () => {
                   ease: [0.25, 0.1, 0.25, 1.0],
                 }}
               >
-                <Image
-                  alt="Vietnam Economic Development"
-                  className="rounded-xl shadow-md object-cover w-full max-w-md md:max-w-lg mx-auto"
-                  src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvietnamnow.kr%2Fwp-content%2Fuploads%2F2024%2F08%2FDALL%25C2%25B7E-2024-08-14-20.31.36-A-realistic-photograph-depicting-Vietnams-economic-development.-Show-modern-cityscapes-with-skyscrapers-bustling-markets-and-advanced-infrastructur.webp&f=1&nofb=1&ipt=16f9252338e32b9b8cbfbb46442a0db2e589a4bd00e42e214d688b892d42b6e6"
-                />
+                <div className="ml-4">
+                  <Image
+                    alt="Vietnam Economic Development"
+                    className="rounded-xl shadow-md object-cover w-full max-w-md md:max-w-lg mx-auto"
+                    height={300}
+                    src="/assets/hinhvietnamcnxh.jpg"
+                    width={500}
+                  />
+                </div>
               </motion.div>
             </div>
 
@@ -157,18 +162,21 @@ const Section1 = () => {
                       alt="hinh muc tieu"
                       height={200}
                       sizes="sm"
-                      src="/assets/anh4.jpg"
-                      width={300}
+                      src="/assets/dangiau-nuocmanh.jpg"
+                      width={400}
                     />
                   </div>
                   {/* Sở hữu */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <Image
-                      alt="hinh muc tieu"
-                      height={200}
-                      src="/assets/plato-1.jpg"
-                      width={300}
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
+                    <div className="pl-30">
+                      <Image
+                        alt="hinh muc tieu"
+                        height={200}
+                        src="/assets/ve-quan-he-so-huu-trong-nen-kinh-te-thi-truong-dinh-huong-xhcn-o-nuoc-ta-hien-nay.jpg"
+                        width={300}
+                      />
+                    </div>
+
                     <div className="p-4 bg-[#FFECC0] rounded-lg">
                       <div className="flex items-center gap-2 mb-2">
                         <Icon
@@ -189,58 +197,91 @@ const Section1 = () => {
                   </div>
 
                   {/* Quản lý */}
-                  <div className="p-4 bg-[#FFECC0] rounded-lg ">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Icon
-                        className="text-primary w-5 h-5"
-                        icon="lucide:gavel"
-                      />
-                      <h3 className="font-semibold text-lg text-primary">
-                        Về quan hệ quản lý
-                      </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
+                    <div className="p-4 bg-[#FFECC0] rounded-lg ">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Icon
+                          className="text-primary w-5 h-5"
+                          icon="lucide:gavel"
+                        />
+                        <h3 className="font-semibold text-lg text-primary">
+                          Về quan hệ quản lý
+                        </h3>
+                      </div>
+                      <p className="leading-relaxed">
+                        Nhà nước quản lý nền kinh tế thông qua một nhà nước pháp
+                        quyền xã hội chủ nghĩa, hoạt động vì lợi ích của nhân
+                        dân, dưới sự lãnh đạo của Đảng Cộng sản và có sự giám
+                        sát của nhân dân.
+                      </p>
                     </div>
-                    <p className="leading-relaxed">
-                      Nhà nước quản lý nền kinh tế thông qua một nhà nước pháp
-                      quyền xã hội chủ nghĩa, hoạt động vì lợi ích của nhân dân,
-                      dưới sự lãnh đạo của Đảng Cộng sản và có sự giám sát của
-                      nhân dân.
-                    </p>
+                    <div className="pl-30">
+                      <Image
+                        alt="hinh muc tieu"
+                        height={200}
+                        sizes="sm"
+                        src="/assets/quanhe-quanly.jpg"
+                        width={300}
+                      />
+                    </div>
                   </div>
 
                   {/* Phân phối */}
-                  <div className="p-4 bg-[#FFECC0] rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Icon
-                        className="text-primary w-5 h-5"
-                        icon="lucide:coins"
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
+                    <div className="pl-30">
+                      <Image
+                        alt="hinh muc tieu"
+                        height={200}
+                        sizes="sm"
+                        src="/assets/phanphoi.png"
+                        width={300}
                       />
-                      <h3 className="font-semibold text-lg text-primary">
-                        Về quan hệ phân phối
-                      </h3>
                     </div>
-                    <p className="leading-relaxed">
-                      Thực hiện đa dạng các hình thức phân phối, trong đó chủ
-                      yếu là phân phối theo lao động, hiệu quả kinh tế và phân
-                      phối theo phúc lợi xã hội.
-                    </p>
+                    <div className="p-4 bg-[#FFECC0] rounded-lg">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Icon
+                          className="text-primary w-5 h-5"
+                          icon="lucide:coins"
+                        />
+                        <h3 className="font-semibold text-lg text-primary">
+                          Về quan hệ phân phối
+                        </h3>
+                      </div>
+                      <p className="leading-relaxed">
+                        Thực hiện đa dạng các hình thức phân phối, trong đó chủ
+                        yếu là phân phối theo lao động, hiệu quả kinh tế và phân
+                        phối theo phúc lợi xã hội.
+                      </p>
+                    </div>
                   </div>
 
                   {/* Kinh tế - xã hội */}
-                  <div className="p-4 bg-[#FFECC0] rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Icon
-                        className="text-primary w-5 h-5"
-                        icon="lucide:heart-pulse"
-                      />
-                      <h3 className="font-semibold text-lg text-primary">
-                        Về quan hệ giữa kinh tế và xã hội
-                      </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
+                    <div className="p-4 bg-[#FFECC0] rounded-lg">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Icon
+                          className="text-primary w-5 h-5"
+                          icon="lucide:heart-pulse"
+                        />
+                        <h3 className="font-semibold text-lg text-primary">
+                          Về quan hệ giữa kinh tế và xã hội
+                        </h3>
+                      </div>
+                      <p className="leading-relaxed">
+                        Tăng trưởng kinh tế phải luôn đi đôi với việc thực hiện
+                        tiến bộ và công bằng xã hội trong từng giai đoạn phát
+                        triển.
+                      </p>
                     </div>
-                    <p className="leading-relaxed">
-                      Tăng trưởng kinh tế phải luôn đi đôi với việc thực hiện
-                      tiến bộ và công bằng xã hội trong từng giai đoạn phát
-                      triển.
-                    </p>
+                    <div className="pl-30">
+                      <Image
+                        alt="hinh muc tieu"
+                        height={200}
+                        sizes="sm"
+                        src="/assets/phat-trien-ben-vung.jpg"
+                        width={350}
+                      />
+                    </div>
                   </div>
                 </div>
               </Card>

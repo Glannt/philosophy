@@ -33,10 +33,10 @@ export default function IndexPage() {
                   />
                 </motion.div>
                 {/* Title */}
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-300 bg-clip-text text-transparent animate-fade-in-up">
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-500 bg-clip-text text-transparent animate-fade-in-up">
                   <motion.h1
                     animate="visible"
-                    className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-300 bg-clip-text text-transparent"
+                    className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-300 to-primary-500 bg-clip-text text-transparent"
                     initial="hidden"
                     variants={fadeInUp}
                   >
@@ -47,7 +47,7 @@ export default function IndexPage() {
                 {/* Subtitle */}
                 <motion.p
                   animate="visible"
-                  className="text-xl text-primary-400 mb-8 font-extrabold max-w-2xl mx-auto"
+                  className="text-xl text-primary-500 mb-8 font-extrabold max-w-2xl mx-auto"
                   initial="hidden"
                   transition={{ delay: 0.2 }}
                   variants={fadeInUp}

@@ -39,6 +39,61 @@ const questions = [
     ],
     correct: 0,
   },
+  {
+    question:
+      "Đặc trưng cơ bản nhất của nền kinh tế thị trường định hướng xã hội chủ nghĩa ở Việt Nam là gì?",
+    options: [
+      "Kinh tế do Nhà nước điều hành hoàn toàn",
+      "Có sự quản lý của Nhà nước, định hướng XHCN, đồng thời tuân theo quy luật thị trường",
+      "Tự do cạnh tranh tuyệt đối, không cần vai trò Nhà nước",
+      "Chỉ dựa vào kinh tế tập thể",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Theo quan điểm triết học Mác – Lênin, cơ sở vật chất của chủ nghĩa xã hội là gì?",
+    options: [
+      "Nền sản xuất nhỏ lẻ, thủ công",
+      "Nền sản xuất công nghiệp hiện đại, năng suất lao động cao",
+      "Nền nông nghiệp truyền thống",
+      "Thương mại tự do giữa các nước",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Trong nền kinh tế thị trường định hướng XHCN, Nhà nước giữ vai trò gì?",
+    options: [
+      "Làm trọng tài trung lập giữa các doanh nghiệp",
+      "Định hướng, điều tiết và bảo đảm định hướng XHCN trong phát triển kinh tế",
+      "Không can thiệp vào hoạt động của doanh nghiệp",
+      "Chỉ quản lý doanh nghiệp nhà nước",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Theo triết học Mác – Lênin, mối quan hệ giữa cơ sở hạ tầng và kiến trúc thượng tầng thể hiện điều gì trong nền kinh tế Việt Nam?",
+    options: [
+      "Kinh tế và chính trị vận hành tách biệt",
+      "Kinh tế quyết định chính trị, đồng thời chính trị tác động trở lại kinh tế",
+      "Chính trị hoàn toàn chi phối kinh tế",
+      "Không có mối liên hệ nào giữa hai yếu tố này",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Trong định hướng phát triển kinh tế ở Việt Nam, yếu tố nào được xem là trung tâm của quá trình phát triển?",
+    options: [
+      "Phát triển doanh nghiệp nhà nước",
+      "Con người – vừa là mục tiêu, vừa là động lực của sự phát triển",
+      "Thu hút vốn đầu tư nước ngoài",
+      "Hiện đại hóa hạ tầng giao thông",
+    ],
+    correct: 1,
+  },
 ];
 
 const Quiz = () => {
@@ -78,7 +133,7 @@ const Quiz = () => {
     <DefaultLayout>
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-10 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent animate-fade-in-up">
+          <h1 className="text-4xl font-bold text-center mb-10 bg-primary bg-clip-text text-transparent animate-fade-in-up">
             Kiểm tra kiến thức
           </h1>
 
