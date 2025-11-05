@@ -13,10 +13,11 @@ import {
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, SearchIcon } from "@/components/icons";
+import { SearchIcon } from "@/components/icons";
 import { Logo } from "@/components/icons";
 import { useAuth } from "@/context/UserContext";
 import { NavbarAuth } from "@/components/navbar-auth";
@@ -25,6 +26,25 @@ import { DropdownBackground } from "@/components/dropdown-background";
 export const Navbar = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+
+  const [randomValue, setRandomValue] = useState<number>(0);
+
+  useEffect(() => {
+    // Function to generate a random number 0–100
+    const generateRandom = () => Math.floor(Math.random() * 101);
+
+    // Set an initial value
+    setRandomValue(generateRandom());
+
+    // Update every 2 minutes (120000 ms)
+    const interval = setInterval(() => {
+      setRandomValue(generateRandom());
+    }, 4000);
+
+    // Cleanup on unmount
+    return () => clearInterval(interval);
+  }, []);
+
   const searchInput = (
     <Input
       aria-label="Search"
@@ -92,13 +112,15 @@ export const Navbar = () => {
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
+        <NavbarItem>
+          <span className="ml-2 text-sm text-foreground-mute">
+            {randomValue}
+          </span>
+        </NavbarItem>
         <NavbarAuth handleAuth={handleAuth} handleLogout={logout} user={user} />
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>

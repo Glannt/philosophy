@@ -84,7 +84,7 @@ export default function IndexPage() {
           {/* Content Sections */}
           <section className="py-16">
             <div className="container mx-auto px-4">
-              <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+              <h2 className="text-3xl font-bold text-center mb-12 text-primary-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]">
                 Nội dung chương học
               </h2>
               <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
