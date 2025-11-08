@@ -39,7 +39,7 @@ export const Navbar = () => {
     // Update every 2 minutes (120000 ms)
     const interval = setInterval(() => {
       setRandomValue(generateRandom());
-    }, 4000);
+    }, 10000);
 
     // Cleanup on unmount
     return () => clearInterval(interval);
@@ -109,14 +109,15 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
+        <NavbarItem>
+          <span className="ml-2 text-sm text-foreground-mute">
+            Số người hiện đang truy cập: {randomValue}
+          </span>
+        </NavbarItem>
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem>
-          <span className="ml-2 text-sm text-foreground-mute">
-            {randomValue}
-          </span>
-        </NavbarItem>
+
         <NavbarAuth handleAuth={handleAuth} handleLogout={logout} user={user} />
       </NavbarContent>
 
