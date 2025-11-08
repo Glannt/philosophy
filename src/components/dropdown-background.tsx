@@ -18,7 +18,7 @@ import { useEffect, useState } from "react";
 
 const backgroundOptions = [
   { label: "Marx", value: "/assets/Mac-background.jpg" },
-  { label: "Anghen", value: "/assets/Fred_Engels.png" },
+  { label: "Anghen", value: "/assets/ph_angghen.jpg" },
   // { label: "City", value: "/images/city.jpg" },
   // { label: "Space", value: "/images/space.jpg" },
 ];
