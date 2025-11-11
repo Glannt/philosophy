@@ -198,7 +198,7 @@ const Section1 = () => {
 
                   {/* Quản lý */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
-                    <div className="p-4 bg-[#FFECC0] rounded-lg ">
+                    <div className="p-4 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg ">
                       <div className="flex items-center gap-2 mb-2">
                         <Icon
                           className="text-primary w-5 h-5"
@@ -237,7 +237,7 @@ const Section1 = () => {
                         width={300}
                       />
                     </div>
-                    <div className="p-4 bg-[#FFECC0] rounded-lg">
+                    <div className="p-4 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg">
                       <div className="flex items-center gap-2 mb-2">
                         <Icon
                           className="text-primary w-5 h-5"
@@ -257,7 +257,7 @@ const Section1 = () => {
 
                   {/* Kinh tế - xã hội */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
-                    <div className="p-4 bg-[#FFECC0] rounded-lg">
+                    <div className="p-4 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg">
                       <div className="flex items-center gap-2 mb-2">
                         <Icon
                           className="text-primary w-5 h-5"

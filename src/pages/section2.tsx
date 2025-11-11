@@ -58,7 +58,7 @@ const Section2 = () => {
 
                 <div className="space-y-4">
                   {/** Các sub-card */}
-                  <div className="p-4 bg-[#FFECC0] rounded-lg border border-border animate-fade-in-up [animation-delay:350ms]">
+                  <div className="p-4 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg border border-border animate-fade-in-up [animation-delay:350ms]">
                     <div className="flex items-center gap-2 mb-2">
                       <Icon
                         className="text-primary w-5 h-5 animate-bounce"
@@ -74,7 +74,7 @@ const Section2 = () => {
                     </p>
                   </div>
 
-                  <div className="p-4 bg-[#FFECC0] rounded-lg border border-border animate-fade-in-up [animation-delay:400ms]">
+                  <div className="p-4 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg border border-border animate-fade-in-up [animation-delay:400ms]">
                     <div className="flex items-center gap-2 mb-2">
                       <Icon
                         className="text-primary w-5 h-5 animate-bounce"
@@ -128,7 +128,7 @@ const Section2 = () => {
                 {/* Sub-cards */}
                 <div className="space-y-6">
                   <motion.div
-                    className="p-4 bg-[#FFECC0] rounded-lg border border-border"
+                    className="p-4 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg border border-border"
                     variants={subCardVariants}
                   >
                     <div className="flex items-center gap-2 mb-2">
@@ -148,7 +148,7 @@ const Section2 = () => {
                   </motion.div>
 
                   <motion.div
-                    className="p-4 bg-[#FFECC0] rounded-lg border border-border"
+                    className="p-4 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg border border-border"
                     variants={subCardVariants}
                   >
                     <div className="flex items-center gap-2 mb-2">

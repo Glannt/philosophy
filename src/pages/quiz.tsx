@@ -94,6 +94,115 @@ const questions = [
     ],
     correct: 1,
   },
+  {
+    question:
+      "Trong nền kinh tế thị trường định hướng XHCN, mục tiêu phát triển kinh tế phải kết hợp với điều gì?",
+    options: [
+      "Chỉ tập trung vào tăng trưởng GDP",
+      "Vừa phát triển kinh tế, vừa nâng cao đời sống con người và công bằng xã hội",
+      "Chỉ tập trung vào xuất khẩu",
+      "Chỉ phát triển công nghiệp nặng",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Nguyên tắc cơ bản trong quản lý kinh tế của Nhà nước ở Việt Nam là gì?",
+    options: [
+      "Nhà nước tuyệt đối can thiệp vào mọi lĩnh vực",
+      "Nhà nước định hướng phát triển, tạo môi trường thuận lợi cho thị trường vận hành",
+      "Nhà nước không tham gia quản lý",
+      "Nhà nước chỉ quản lý doanh nghiệp nước ngoài",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Theo triết học Mác – Lênin, lực lượng sản xuất là gì trong nền kinh tế?",
+    options: [
+      "Chỉ bao gồm lao động con người",
+      "Bao gồm công cụ lao động, vật tư, kỹ thuật và con người tham gia sản xuất",
+      "Chỉ bao gồm tài nguyên thiên nhiên",
+      "Chỉ bao gồm vốn đầu tư của doanh nghiệp",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Vai trò của kinh tế tập thể trong nền kinh tế thị trường định hướng XHCN là gì?",
+    options: [
+      "Là lực lượng chủ đạo duy nhất",
+      "Bổ sung cho kinh tế nhà nước và kinh tế tư nhân, tăng cường hợp tác xã hội",
+      "Không còn vai trò gì",
+      "Chỉ tồn tại dưới hình thức doanh nghiệp tư nhân",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Trong triết học Mác – Lênin, cơ sở hạ tầng kinh tế ảnh hưởng như thế nào đến kiến trúc thượng tầng?",
+    options: [
+      "Cơ sở hạ tầng độc lập và không ảnh hưởng gì",
+      "Cơ sở hạ tầng quyết định kiến trúc thượng tầng, nhưng kiến trúc thượng tầng cũng tác động trở lại cơ sở hạ tầng",
+      "Chỉ kiến trúc thượng tầng chi phối cơ sở hạ tầng",
+      "Không có mối quan hệ nào",
+    ],
+    correct: 1,
+  },
+  {
+    question: "Đặc trưng của nền kinh tế thị trường định hướng XHCN là gì?",
+    options: [
+      "Tự do cạnh tranh tuyệt đối không có sự điều tiết của Nhà nước",
+      "Có thị trường, có cạnh tranh, nhưng Nhà nước định hướng để đảm bảo mục tiêu XHCN",
+      "Chỉ dựa vào kinh tế nhà nước",
+      "Chỉ dựa vào kinh tế tư nhân",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Theo quan điểm kinh tế học Mác – Lênin, giá trị thặng dư phản ánh điều gì?",
+    options: [
+      "Chỉ là lợi nhuận doanh nghiệp",
+      "Sự chênh lệch giữa giá trị sản phẩm do lao động tạo ra và chi phí trả cho lao động",
+      "Chỉ là thu nhập của người lao động",
+      "Không có ý nghĩa kinh tế",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Trong định hướng phát triển kinh tế Việt Nam, phát triển bền vững được hiểu là gì?",
+    options: [
+      "Chỉ tăng trưởng nhanh GDP",
+      "Phát triển kinh tế gắn với bảo vệ môi trường và nâng cao chất lượng đời sống con người",
+      "Chỉ tập trung vào xuất khẩu hàng hóa",
+      "Chỉ đầu tư vào công nghệ cao",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Vai trò của con người trong nền kinh tế thị trường định hướng XHCN được nhấn mạnh như thế nào?",
+    options: [
+      "Con người là công cụ sản xuất chính, không cần phát triển toàn diện",
+      "Con người vừa là mục tiêu, vừa là động lực của sự phát triển kinh tế – xã hội",
+      "Chỉ là lực lượng lao động thụ động",
+      "Chỉ quan tâm đến lợi ích nhà nước",
+    ],
+    correct: 1,
+  },
+  {
+    question:
+      "Trong nền kinh tế thị trường định hướng XHCN, việc phát triển kinh tế phải dựa trên cơ sở nào?",
+    options: [
+      "Cạnh tranh tự do tuyệt đối và lợi nhuận tối đa",
+      "Hài hòa lợi ích của Nhà nước, doanh nghiệp và người dân, bảo đảm công bằng xã hội",
+      "Chỉ dựa vào vốn đầu tư nước ngoài",
+      "Chỉ dựa vào phát triển nông nghiệp",
+    ],
+    correct: 1,
+  },
 ];
 
 const Quiz = () => {

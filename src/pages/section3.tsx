@@ -79,7 +79,7 @@ const Section3 = () => {
                       Là lợi ích vật chất thu được từ các hoạt động kinh tế của
                       con người...
                     </p>
-                    <div className="p-4 bg-[#FFECC0] rounded-lg border border-border">
+                    <div className="p-4 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg border border-border">
                       <div className="flex items-center gap-2 mb-2">
                         <Icon
                           className="text-primary w-5 h-5"
@@ -153,28 +153,28 @@ const Section3 = () => {
                       Các nhân tố ảnh hưởng đến lợi ích kinh tế
                     </h3>
                     <div className="grid gap-3">
-                      <div className="p-3 bg-[#FFECC0] rounded-lg border border-border">
+                      <div className="p-3 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg border border-border">
                         <Icon
                           className="inline w-5 h-5 mr-2 text-primary"
                           icon="lucide:cpu"
                         />
                         Trình độ phát triển của lực lượng sản xuất
                       </div>
-                      <div className="p-3 bg-[#FFECC0] rounded-lg border border-border">
+                      <div className="p-3 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg border border-border">
                         <Icon
                           className="inline w-5 h-5 mr-2 text-primary"
                           icon="lucide:users"
                         />
                         Địa vị của chủ thể trong hệ thống quan hệ sản xuất
                       </div>
-                      <div className="p-3 bg-[#FFECC0] rounded-lg border border-border">
+                      <div className="p-3 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg border border-border">
                         <Icon
                           className="inline w-5 h-5 mr-2 text-primary"
                           icon="lucide:scale"
                         />
                         Chính sách phân phối thu nhập của Nhà nước
                       </div>
-                      <div className="p-3 bg-[#FFECC0] rounded-lg border border-border">
+                      <div className="p-3 bg-[#FFECC0] dark:bg-[#BFA36F] rounded-lg border border-border">
                         <Icon
                           className="inline w-5 h-5 mr-2 text-primary"
                           icon="lucide:globe"
